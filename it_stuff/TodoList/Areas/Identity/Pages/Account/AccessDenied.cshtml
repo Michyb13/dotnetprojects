@@ -1,0 +1,15 @@
+@page
+@model TodoList.Areas.Identity.Pages.Account.AccessDenied
+@{
+    ViewData["Title"] = "AccessDenied";
+}
+
+
+
+<div class="text-center">
+    <h1 class="text-danger">Access Denied!</h1>
+    <h5 class="text-danger">You don't have the authorization to view or make changes to this resourse.</h5>
+    <h6 class="text-danger">Click the button below to go back to the home page</h6>
+    <a asp-page="/Index" class="btn btn-primary">Go Back</a>
+    
+</div>

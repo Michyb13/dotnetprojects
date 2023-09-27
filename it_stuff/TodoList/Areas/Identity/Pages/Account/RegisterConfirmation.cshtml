@@ -1,0 +1,11 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    ViewData["Title"] = "Register confirmation";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h2>Your Account with username of @Model.UserName and email of @Model.Email has been successfully created.</h2>
+
+<h4>Press this <a asp-page="/Account/Login"> link</a> to go to our login page.</h4>

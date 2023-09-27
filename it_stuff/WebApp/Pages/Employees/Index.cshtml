@@ -1,0 +1,30 @@
+@page
+@model WebApp.Pages.Employees.Index
+
+
+<h1>Employee's Data</h1>
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model.Data){
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Address</td>
+            <td>@item.Phone</td>
+            <td><a asp-page="Edit" asp-route-id="@item.Id">Edit</a></td>
+            <td><a asp-page="Delete" asp-route-id="@item.Id">Delete</a></td>
+        </tr>
+    }
+    </tbody>
+    </table>
+
+<p><a asp-page="Create">Add New Employee</a></p>
+</div>

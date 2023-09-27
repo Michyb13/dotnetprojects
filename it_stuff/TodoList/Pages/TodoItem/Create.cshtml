@@ -1,0 +1,18 @@
+@page
+@model TodoList.Pages.TodoItem.Create
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="TodoItem.Text"></label>
+        <input asp-for="TodoItem.Text" class="form-control" />
+        <span asp-validation-for="TodoItem.Text" class="text-danger"></span>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

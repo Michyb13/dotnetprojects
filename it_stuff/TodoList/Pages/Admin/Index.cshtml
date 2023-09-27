@@ -1,0 +1,23 @@
+@page
+@model TodoList.Pages.Admin.Index
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1></h1>
+
+<div class="container mt-5">
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Welcome, Admin!</h1>
+        <p class="lead">Here are some administrative tasks you can perform:</p>
+    </div>
+
+    <div class="row text-center">
+        <div class="col-md-6">
+            <a asp-page="./ListUsers" class="btn btn-primary btn-lg btn-block">List of Users</a>
+        </div>
+        <div class="col-md-6">
+            <a asp-page="./ListRoles" class="btn btn-success btn-lg btn-block">List of Roles</a>
+        </div>
+    </div>
+</div>

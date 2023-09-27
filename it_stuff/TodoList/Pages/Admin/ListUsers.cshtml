@@ -1,0 +1,38 @@
+@page
+@model TodoList.Pages.Admin.ListUsers
+@{
+    ViewData["Title"] = "ListUsers";
+}
+
+<h2>User Management</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Roles</th>
+            <th>Edit Roles</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.UsersWithRoles)
+        {
+            <tr>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td> @if (user.Roles != null && user.Roles.Any())
+                    {
+                        @string.Join(", ", user.Roles)
+                    }
+                    else
+                    {
+                        <span>No Roles</span>
+                    }</td>
+                <td>
+                    <a asp-page="./EditUsers" asp-route-id="@user.Id" class="btn btn-primary">Edit Roles</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

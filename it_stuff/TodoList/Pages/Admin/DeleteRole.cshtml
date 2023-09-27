@@ -1,0 +1,15 @@
+@page "{id}"
+@model TodoList.Pages.Admin.DeleteRole
+@{
+    ViewData["Title"] = "Delete Role";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="roleName">Role Name:</label>
+        <input type="text" class="form-control" value="@Model.RoleName" readonly />
+    </div>
+    <button type="submit" class="btn btn-danger">Delete Role</button>
+</form>

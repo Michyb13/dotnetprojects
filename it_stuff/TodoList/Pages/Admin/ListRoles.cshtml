@@ -1,0 +1,31 @@
+@page
+@model TodoList.Pages.Admin.ListRoles
+@{
+    ViewData["Title"] = "ListRoles";
+}
+
+<h1>List of Roles</h1>
+
+<a asp-page="./CreateRole" class="btn btn-primary">Add New Role</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Role Id</th>
+            <th>Role Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var role in Model.RolesModel.AllRoles)
+        {
+            <tr>
+                <td>@role.Id</td>
+                <td>@role.Name</td>
+                <td>
+                    <a asp-page="./DeleteRole" asp-route-id="@role.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

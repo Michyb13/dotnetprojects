@@ -1,0 +1,28 @@
+@page "{id}"
+@model WebApp.Pages.Employees.Edit
+
+
+<h1>Edit Employee</h1>
+
+<form method="post">
+        <input type="hidden" asp-for="Employee.Id" />
+        <label asp-for="Employee.Name"></label>
+        <input asp-for="Employee.Name" class="form-control" />
+        <span asp-validation-for="Employee.Name" class="text-danger"></span>
+    
+        <label asp-for="Employee.Address"></label>
+        <input asp-for="Employee.Address" class="form-control" />
+        <span asp-validation-for="Employee.Address" class="text-danger"></span>
+    
+        <label asp-for="Employee.Phone"></label>
+        <input asp-for="Employee.Phone" class="form-control" />
+        <span asp-validation-for="Employee.Phone" class="text-danger"></span>
+   
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+
+
+
+
+

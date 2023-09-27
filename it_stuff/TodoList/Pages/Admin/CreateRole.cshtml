@@ -1,0 +1,22 @@
+@page
+@model TodoList.Pages.Admin.CreateRole
+@{
+    ViewData["Title"] = "CreateRole";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-12">
+        
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-floating">
+                    <input asp-for="model.RoleName" class="form-control" aria-required="true" />
+                    <label asp-for="model.RoleName" class="form-label"></label>
+                    <span asp-validation-for="model.RoleName" class="text-danger"></span>
+                </div>
+                 <button type="submit" class="w-40 btn btn-lg btn-primary">Add Role</button>
+        </form>
+    </div>
+</div>

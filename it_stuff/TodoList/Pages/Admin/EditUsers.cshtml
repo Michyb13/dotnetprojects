@@ -1,0 +1,28 @@
+@page "{id}"
+@model TodoList.Pages.Admin.EditUsers
+@{
+    ViewData["Title"] = "EditUsers";
+}
+
+
+
+<h1>Edit User Roles</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label>User:</label>
+        <input type="text" value="@Model.UserName" class="form-control" disabled />
+    </div>
+
+    <div class="form-group">
+        <label>Roles:</label>
+        <br />
+        @foreach (var role in Model.AllRoles)
+        {
+            <input type="checkbox" id="@role.Name" name="SelectedRoles" value="@role.Name" @(Model.SelectedRoles.Contains(role.Name) ? "checked" : "") />
+            <label for="@role.Name">@role.Name</label><br />
+        }
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
